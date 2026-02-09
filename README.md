@@ -4,8 +4,11 @@
 This project was developed as part of a group assignment (6 members) at UCL. The other authors wish to remain anonymous. 
 
 laluke1:
+
 **CLI Architecture & Design:** Designed the command-line interface structure and user interaction flow.
+
 **Camp Management Workflows:** Implemented the core logic for creating new camps, managing sessions, and handling coordinator inputs.
+
 **Backend Logic:** Built the SQL persistence layer for the camp creation process, ensuring data integrity when initializing new camp records.
 
 # CampTrack
