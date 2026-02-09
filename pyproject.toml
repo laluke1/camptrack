@@ -1,0 +1,41 @@
+[build-system]
+requires = ["setuptools >= 77.0.3"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "camptrack"
+dynamic = ["version"]
+authors = [
+    { name="Group 8" },
+]
+description = "A Scout Camp Management System"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "pandas[plot, output-formatting]>=2.3, <3.0",
+    "geopandas>=1.1, <2.0; python_version < '3.14'",
+    "shapely>=2.1, <3.0; python_version < '3.14'",
+    "cartopy>=0.25, <1.0; python_version >= '3.14'",
+    "tabulate>=0.9.0",
+    "httpx>=0.28.1, <0.29",
+]
+
+[project.scripts]
+camptrack = "camptrack.cli:main"
+camptrack-dev = "camptrack.dev:main"
+
+[tool.setuptools.dynamic]
+version = {attr = "camptrack.__version__"}
+
+[tool.setuptools.package-data]
+camptrack = ["database/*.sql"]
+
+[project.optional-dependencies]
+dev = [
+    # For static type checking
+    "mypy",
+    # Get pandas's stubs for type checking with mypy
+    "pandas-stubs",
+    # Get tabulate's stubs for type checking with mypy
+    "types-tabulate"
+]
